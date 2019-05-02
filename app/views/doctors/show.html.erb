@@ -1,0 +1,14 @@
+<h2>Details about <%= @doctor.name %></h2>
+<p>Department: <%= @doctor.department %></p>
+
+<h3>Appointments:</h3>
+<ul>
+<% @doctor.appointments.each do |appointment| %>
+  <li><%= appointment.appointment_datetime.to_formatted_s(:long_ordinal).insert(-6, "at ") %></li>
+<% end %>
+</ul>
+
+<h3>Patients:</h3>
+<% @doctor.patients.each do |patient| %>
+  <%= link_to patient.name, patient_path(patient) %><br>
+<% end %>
