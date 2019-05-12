@@ -1,0 +1,9 @@
+<h2>Mount Hell's Patients:</h2>
+
+<ul>
+  <%=@patients.map do |patient|%>
+  <li>
+    Name: <%=patient.name%> Number of Appointments: <%=patient.appointments.size%>
+  </li>
+  <%end%>
+</ul>
